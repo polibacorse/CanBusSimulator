@@ -23,4 +23,4 @@ DEFINES += QT_DEPRECATED_WARNINGS
 HEADERS += \
     mymosquitto.h
 
-LIBS += -lmosquitto -lmosquittopp -lstdc++fs
+LIBS += -lmosquitto -lmosquittopp
