@@ -2,7 +2,7 @@
 #include <fstream>
 #include <thread>
 #include <csignal>
-#include "mymosquitto.h"
+#include <mosquittopp.h>
 
 using namespace std;
 
@@ -15,12 +15,18 @@ void interruptHandler(int) {
 
 int main()
 {
-    mymosquitto mosq;
     ifstream fileReader("../candump.log");
 	string a, json;
+    mosqpp::mosquittopp mosq("CanBusSim");
+
+    int rc = mosq.connect("localhost");
+    if (rc) {
+        cout << "ERROR: Cannot connect to MQTT broker (code " << rc << ")." << endl;
+        return -rc;
+    }
 
     if (!fileReader.is_open()) {
-        cout << "ERROR: File \"candump.log\" not found" << endl;
+        cout << "ERROR: File \"candump.log\" not found." << endl;
         return -1;
     }
 
