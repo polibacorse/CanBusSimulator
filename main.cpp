@@ -46,6 +46,7 @@ int main()
 	}
 
     fileReader.close();
+    mosq.disconnect();
 
     return 0;
 }
