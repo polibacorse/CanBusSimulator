@@ -29,7 +29,7 @@ int main()
 
     while (running) {
         while (fileReader >> a >> json && running) {
-            mosq.publish(NULL, "/raw", json.length(), json.c_str());
+            mosq.publish(NULL, "/data/raw", json.length(), json.c_str());
 			cout << json << endl;
 
             this_thread::sleep_for(chrono::milliseconds(100));
