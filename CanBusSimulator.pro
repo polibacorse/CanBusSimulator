@@ -1,6 +1,8 @@
-CONFIG += c++11
+CONFIG += c++17
 CONFIG += console
 CONFIG -= app_bundle qt
+
+QMAKE_CXXFLAGS += -std=c++17
 
 TEMPLATE = app
 
@@ -21,4 +23,4 @@ DEFINES += QT_DEPRECATED_WARNINGS
 HEADERS += \
     mymosquitto.h
 
-LIBS += -lmosquitto -lmosquittopp
+LIBS += -lmosquitto -lmosquittopp -lstdc++fs

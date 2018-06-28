@@ -1,3 +1,4 @@
 \.qmake.stash
 CanBusSimulator
 *.o
+CanBusSimulator.pro.user
